@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        #border{
+            border-bottom: 3px solid black;
+            width: 300px;
+        }
+    </style>
+</head>
+    <script type= "text/javascript">
+        $(document).ready(function(){
+           
+            $("#submit").click(function(){
+                $("table").append("<tr><th>" + $('input[name="firstname"]').val() + "</td><td>"
+                    +$('input[name="lastname"]').val() + "</td><td>"
+                    +$('input[name="email"]').val() + '</td><td>'
+                    +$('input[name="contact"]').val() + '</td><td>');
+                return false;
+            });
+        }); //end of script
+    </script>
+<body>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Email Address</th>
+                <th>Contact #</th>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1>Add User</h1>
+    </div>
+    <div id="border"></div>
+    <br><br>
+    <div>
+        <form action="/action_page.php">
+            <p>First Name:<input type="text" name="firstname" value=""></p>
+            <p>Last Name<input type="text" name="lastname" value=""></p>
+            <p>Email Address:<input type="text" name="email" value=""></p>
+            <p>Contact #<input type="text" name="contact" value=""></p>
+            <p><input id="submit" type="submit" value="Add User"></p>
+        </form>
+    </div>
+</body>
+</html>
